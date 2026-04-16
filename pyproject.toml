@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build-meta"
+
+[project]
+name = "titan-ml-logic"
+version = "1.0.0"
+dependencies = [
+    "pandas"
+]
+
+[project.scripts]
+app = "app:main"
