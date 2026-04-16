@@ -10,7 +10,7 @@ Esta skill permite a la IA entender rápidamente la estructura de cualquier data
 
 ## Cómo usar
 El agente de IA debe ejecutar el script pasando la ruta del archivo CSV.
-`python main.py --file data.csv`
+`python app.py --file data.csv`
 
 ## Requisitos
 - Python 3.9+
