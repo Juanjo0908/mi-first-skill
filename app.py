@@ -21,15 +21,16 @@ def analyze_data(file_path):
     except Exception as e:
         return json.dumps({"error": str(e)})
 
-if __name__ == "__main__":
-    
-    print("Skill iniciada correctamente")
-    
-   
+def main():
+    import argparse
     parser = argparse.ArgumentParser(description="Analizador de CSV para ML")
     parser.add_argument("--file", required=True, help="Ruta al archivo CSV")
     args = parser.parse_args()
-
-   
+    
     result = analyze_data(args.file)
     print(result)
+
+if __name__ == "__main__":
+    main()
+
+
