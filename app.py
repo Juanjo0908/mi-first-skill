@@ -22,9 +22,14 @@ def analyze_data(file_path):
         return json.dumps({"error": str(e)})
 
 if __name__ == "__main__":
+    
+    print("Skill iniciada correctamente")
+    
+   
     parser = argparse.ArgumentParser(description="Analizador de CSV para ML")
     parser.add_argument("--file", required=True, help="Ruta al archivo CSV")
     args = parser.parse_args()
 
+   
     result = analyze_data(args.file)
     print(result)
