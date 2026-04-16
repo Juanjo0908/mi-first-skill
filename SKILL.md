@@ -1,5 +1,5 @@
 ---
-name: juanjo-ml-analyzer-v1
+name: juanjo-data-tools-v1
 description: Analiza un archivo CSV y devuelve estadísticas clave para Machine Learning (nulos, tipos de datos y correlación).
 author: JuanPalacios
 version: 1.0.0
