@@ -1,38 +1,21 @@
-from flask import Flask, jsonify, request
-import pandas as pd
-import io
+from flask import Flask, jsonify
 
-app = Flask(__name__) # Este es el 'app' que el servidor busca
+# ESTA ES LA LÍNEA CLAVE: El servidor busca esta variable 'app'
+app = Flask(__name__)
 
 @app.route('/')
 def home():
     return jsonify({
-        "status": "online",
-        "message": "ML Skill lista."
-        "author": "Juanjo"
+        "status": "active",
+        "message": "¡Skill desplegada con éxito!",
+        "version": "1.0.0"
     })
-@app.route('/test')
-def test():
-    return jsonify({"info": "Aquí irá el análisis de datos"})
-    
+
+# Asegúrate de que tus funciones de ML estén después de la definición de 'app'
 @app.route('/analyze', methods=['POST'])
 def analyze():
-    if 'file' not in request.files:
-        return jsonify({"error": "No file uploaded"}), 400
-    
-    file = request.files['file']
-    df = pd.read_csv(io.StringIO(file.stream.read().decode("UTF8")))
-    
-    report = {
-        "rows": int(df.shape[0]),
-        "cols": int(df.shape[1]),
-        "columns": list(df.columns)
-    }
-    return jsonify(report)
+    return jsonify({"result": "Analizador listo"})
 
-# Importante: para que funcione el entrypoint app:app
-main = app
-
+# No es obligatorio para el servidor, pero ayuda en local
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
-
+    app.run()
